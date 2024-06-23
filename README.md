@@ -15,3 +15,7 @@
   ```javascript
   console.log(z); //ReferenceError: z is not defined
   ```
+
+
+# Frontend
+Front-end web development involves creating the graphical user interface of a website using HTML, CSS, and JavaScript, enabling user interaction. This includes designing layouts, styling content, and adding interactive features. It often involves frameworks like React, Angular, and Vue.js, as well as tools like Sass for CSS and Webpack for bundling. Front-end developers ensure websites are responsive and accessible across various devices and browsers.
