@@ -17,6 +17,7 @@
   ```
 
 ### LocalStorage vs SessionStorage
+![Screenshot (64)](https://github.com/bitscurrent/JavaScriptNotes/assets/150729849/637b3033-1b61-4593-8d41-cb48e79bf093)
 
 Both local storage and session storage can store an object in the browser. However, when a tab or browser is closed, the data stored in session storage is erased, while data in local storage remains until it is removed. Local storage is a property of the window object in the browser, and data can be stored by inserting a key-value pair as follows: 
   ```javascript
