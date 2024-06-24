@@ -28,5 +28,8 @@ Both local storage and session storage can store an object in the browser. Howev
   ```
 _Fetching data by making network requests and processing it takes time, so developers prefer to store it in local storage and retrieve it when needed._
 
+# HTTP vs HTTPS
+Hypertext Transfer Protocol (HTTP) is a set of rules for communication between web browsers and servers. When a website is visited, the browser sends an HTTP request, and the server responds with the web page. HTTP communicates in plain text, making it easier for people to sniff. However, HTTPS (Hypertext Transfer Protocol Secure) adds a layer of security by encrypting the data exchanged, ensuring privacy and protection from eavesdroppers. The "S" in HTTPS stands for "Secure."
+
 # Frontend
 Front-end web development involves creating the graphical user interface of a website using HTML, CSS, and JavaScript, enabling user interaction. This includes designing layouts, styling content, and adding interactive features. It often involves frameworks like React, Angular, and Vue.js, as well as tools like Sass for CSS and Webpack for bundling. Front-end developers ensure websites are responsive and accessible across various devices and browsers.
