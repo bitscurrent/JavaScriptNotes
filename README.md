@@ -16,6 +16,9 @@
   console.log(z); //ReferenceError: z is not defined
   ```
 
+### Promises in JS
+In JavaScript, promises have three states: pending, fulfilled, and rejected. A promise represents an asynchronous task, allowing the code to continue executing while the task completes. JavaScript features XMLHttpRequest for handling such tasks, but modern development often uses the async and await keywords for more readable and manageable asynchronous code. Promises are commonly used for tasks like downloading data from the internet, opening a file on the computer, and other operations that take time to complete.
+
 ### LocalStorage vs SessionStorage
 ![Screenshot (64)](https://github.com/bitscurrent/JavaScriptNotes/assets/150729849/637b3033-1b61-4593-8d41-cb48e79bf093)
 
