@@ -15,6 +15,11 @@
   ```javascript
   console.log(z); //ReferenceError: z is not defined
   ```
+### High Order Function
+A function which takes either one or more functions as an argument or returns function as it returns.
+
+#### map, filter and reduce 
+map, filter, and reduce are array methods (built-in higher-order functions). The map function takes a function as an argument and applies it to each element in the array. The filter method also takes a function as an argument and filters out elements according to the logic provided in the function. The reduce method, on the other hand, takes two arguments inside its callback function: the accumulator and the current element.
 
 ### Promises in JS
 In JavaScript, promises have three states: pending, fulfilled, and rejected. A promise represents an asynchronous task, allowing the code to continue executing while the task completes. JavaScript features XMLHttpRequest for handling such tasks, but modern development often uses the async and await keywords for more readable and manageable asynchronous code. Promises are commonly used for tasks like downloading data from the internet, opening a file on the computer, and other operations that take time to complete.
