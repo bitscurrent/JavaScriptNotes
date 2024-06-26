@@ -31,6 +31,25 @@ _let and const_: Variables declared with let and const are also hoisted but are 
   let b = 20;
   console.log(b); // 20
   ```
+##### Difference between const and let
+  ```javascript
+  let b;
+  b = 20;
+  console.log(b); // 20
+  //valid syntax
+  ```
+SyntaxError
+  ```javascript
+  const x; // SyntaxError: Missing initializer in const declaration
+  x = 10; // This line won't be reached
+  ```
+TypeError
+  ```javascript
+  const y = 20;
+  y = 30; // TypeError: Assignment to constant variable.
+  console.log(y); // invalid syntax
+  ```
+
 #### Temporal Dead Zone (TDZ)
 The temporal dead zone refers to the time between entering the scope (e.g., a block or function) and the actual declaration and initialization of let and const variables. During this period, any attempt to access these variables will throw a ReferenceError. The TDZ exists to ensure that variables are not accessed before they are properly initialized, enhancing the reliability and predictability of the code.
 
