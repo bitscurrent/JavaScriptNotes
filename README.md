@@ -15,6 +15,25 @@
   ```javascript
   console.log(z); //ReferenceError: z is not defined
   ```
+### Let and Const in Temporial dead zone
+Variables declared with `var`, `let`, and `const` are _hoisted_, meaning their declarations are moved to the top of their containing scope during the compilation phase. However, there are important differences in how they are initialized:
+
+_var_: Variables declared with var are hoisted and initialized with undefined. This means you can use the variable before its declaration without causing an error, although it will have the value undefined until the actual declaration is encountered.
+  ```javascript
+  console.log(a); // undefined
+  var a = 10;
+  console.log(a); // 10
+  ```
+_let and const_: Variables declared with let and const are also hoisted but are not initialized. They are in a "temporal dead zone" (TDZ) from the start of the block until the declaration is encountered. If you try to access them before their declaration, it will result in a ReferenceError.
+  ```javascript
+  console.log(b); // ReferenceError: Cannot access 'b' before initialization
+  // infact b is in temporial deadzone here(TDZ)
+  let b = 20;
+  console.log(b); // 20
+  ```
+#### Temporal Dead Zone (TDZ)
+The temporal dead zone refers to the time between entering the scope (e.g., a block or function) and the actual declaration and initialization of let and const variables. During this period, any attempt to access these variables will throw a ReferenceError. The TDZ exists to ensure that variables are not accessed before they are properly initialized, enhancing the reliability and predictability of the code.
+
 ### High Order Function
 A function which takes either one or more functions as an argument or returns function as it returns.
 
