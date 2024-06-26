@@ -18,13 +18,13 @@
 ### Let and Const in Temporial dead zone
 Variables declared with `var`, `let`, and `const` are _hoisted_, meaning their declarations are moved to the top of their containing scope during the compilation phase. However, there are important differences in how they are initialized:
 
-_var_: Variables declared with var are hoisted and initialized with undefined. This means you can use the variable before its declaration without causing an error, although it will have the value undefined until the actual declaration is encountered.
+_var_: Variables are initialized with undefined and are stored in the global object (window in the case of browsers), allowing them to be used before their declaration.  Variables declared with var are hoisted and initialized with undefined. This means it can be used before its declaration without causing an error, although it will have the value undefined until the actual declaration is encountered.
   ```javascript
   console.log(a); // undefined
   var a = 10;
   console.log(a); // 10
   ```
-_let and const_: Variables declared with let and const are also hoisted but are not initialized. They are in a "temporal dead zone" (TDZ) from the start of the block until the declaration is encountered. If you try to access them before their declaration, it will result in a ReferenceError.
+_let and const_: Variables declared with let and const are also hoisted but are not initialized and are stored in a different storage, which is not the global object. They are in a "temporal dead zone" (TDZ) from the start of the block until the declaration is encountered. If we try to access them before their declaration, it will result in a ReferenceError.
   ```javascript
   console.log(b); // ReferenceError: Cannot access 'b' before initialization
   // infact b is in temporial deadzone here(TDZ)
