@@ -136,6 +136,20 @@ bind: Returns a new function with a specified this context and initial arguments
   ```
 _These methods allow for flexible function borrowing and ensure proper context handling in various scenarios._
 
+### setTimeout in JS
+
+The setTimeout function with a 0-millisecond delay does not execute the function immediately _see example below_ but instead places it in the event queue to be processed after the current call stack is clear. This is because JavaScript operates with a single-threaded event loop that handles asynchronous events. As a result, the synchronous code runs to completion before the event loop processes any queued asynchronous functions. In the code provided:
+  ```javascript
+  console.log("1");
+  setTimeout(function () {
+  console.log("Hell");
+  }, 0);
+  console.log("2");
+  ```
+#### in depth analysis-
+console.log("1"); and console.log("2"); execute first, printing 1 and 2 respectively. 
+The setTimeout callback, despite having a 0-millisecond delay, is processed only after the synchronous code has completed, resulting in `Hell` being printed last. This behavior occurs because the event loop only picks up the setTimeout callback after the call stack is empty. 
+
 ### Promises in JS
 In JavaScript, promises have three states: pending, fulfilled, and rejected. A promise represents an asynchronous task, allowing the code to continue executing while the task completes. JavaScript features XMLHttpRequest for handling such tasks, but modern development often uses the async and await keywords for more readable and manageable asynchronous code. Promises are commonly used for tasks like downloading data from the internet, opening a file on the computer, and other operations that take time to complete.
 
