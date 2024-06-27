@@ -122,6 +122,20 @@ A function which takes either one or more functions as an argument or returns fu
 #### map, filter and reduce 
 map, filter, and reduce are array methods (built-in higher-order functions). The map function takes a function as an argument and applies it to each element in the array. The filter method also takes a function as an argument and filters out elements according to the logic provided in the function. The reduce method, on the other hand, takes two arguments inside its callback function: the accumulator and the current element.
 
+### Call, Apply and Bind methods
+The call, apply, and bind methods are used to explicitly set the context (this) for a function.
+
+call: Invokes a function with a specified this context and individual arguments.
+apply: Similar to call, but arguments are passed as an array.
+bind: Returns a new function with a specified this context and initial arguments, which can be called later.
+  ```javascript
+  Example:
+  call: func.call(context, arg1, arg2)
+  apply: func.apply(context, [arg1, arg2])
+  bind: const newFunc = func.bind(context, arg1, arg2); newFunc()
+  ```
+_These methods allow for flexible function borrowing and ensure proper context handling in various scenarios._
+
 ### Promises in JS
 In JavaScript, promises have three states: pending, fulfilled, and rejected. A promise represents an asynchronous task, allowing the code to continue executing while the task completes. JavaScript features XMLHttpRequest for handling such tasks, but modern development often uses the async and await keywords for more readable and manageable asynchronous code. Promises are commonly used for tasks like downloading data from the internet, opening a file on the computer, and other operations that take time to complete.
 
