@@ -53,6 +53,69 @@ TypeError
 #### Temporal Dead Zone (TDZ)
 The temporal dead zone refers to the time between entering the scope (e.g., a block or function) and the actual declaration and initialization of let and const variables. During this period, any attempt to access these variables will throw a ReferenceError. The TDZ exists to ensure that variables are not accessed before they are properly initialized, enhancing the reliability and predictability of the code.
 
+### Block scope and shadowing
+_Block Scope_: Code inside curly braces {} is called a block. Multiple statements are grouped inside a block to be executed as a single unit, such as in if, else, loops, etc. Variables declared with let and const are block-scoped, meaning they are only accessible within the block they are declared in, unlike var which is function-scoped or globally-scoped.
+
+_Block Memory_: Variables declared with let and const are stored in a separate memory space within the block, not in the global or function scope. This is why let and const are called block-scoped variables.
+  ```javascript
+  {
+  let a = 10;
+  const b = 20;
+  var c = 30;
+  console.log(a); // 10
+  console.log(b); // 20
+  console.log(c); // 30
+  }
+
+  console.log(c); // 30
+  console.log(a); // ReferenceError: a is not defined
+  console.log(b); // ReferenceError: b is not defined
+  ```
+_Shadowing_: Shadowing occurs when a variable declared within a certain scope (block) has the same name as a variable in an outer scope. The inner variable shadows the outer variable within its scope.
+  ```javascript
+  let x = 1;
+  {
+    let x = 2; // Shadows the outer x
+    console.log(x); // 2
+  }
+  console.log(x); // 1
+  
+  var y = 1;
+  {
+    var y = 2; // Shadows the outer y
+    console.log(y); // 2
+  }
+  console.log(y); // 2
+  ```
+
+_Illegal Shadowing_: Shadowing a variable declared with let or const using var is illegal and results in an error. However, shadowing a var variable with let or const within a block is allowed.
+
+  ```javascript
+  let z = 1;
+  {
+    var z = 2; // SyntaxError: Identifier 'z' has already been declared
+  }
+  ```
+_Scope of Shadow_: The shadowing variable must remain within its block scope. If it tries to cross the scope boundary, it will result in an error.
+
+_Variable Accessibility_: Variables declared with var are stored in the nearest outer function or global scope, making them accessible outside the block. In contrast, variables declared with let and const are only accessible within the block they are declared in. 
+
+  ```javascript
+  {
+    var m = 100;
+  }
+  console.log(m); // 100
+  
+  {
+    let n = 200;
+  }
+  console.log(n); // ReferenceError: n is not defined
+  
+  {
+    const o = 300;
+  }
+  console.log(o); // ReferenceError: o is not defined
+  ```
 ### High Order Function
 A function which takes either one or more functions as an argument or returns function as it returns.
 
